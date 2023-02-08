@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar"
 
 
 
-export default function Input({setUrl,setDogs}) {
+export default function Input() {
   
   return (<>
    <CssBaseline />
@@ -18,7 +18,7 @@ export default function Input({setUrl,setDogs}) {
         >
         <Box component="form" noValidate sx={{ mt: 3 }}>
               <Grid item xs={12}>
-          <SearchBar setUrl={setUrl} setDogs={setDogs} />
+                <SearchBar/>
               </Grid>   
           </Box>
         </Box>

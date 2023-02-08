@@ -8,6 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CircularProgress from '@mui/material/CircularProgress';
 import useFetch from './hooks/useFetch';
 import LoadingComponent from "./components/LoadingComponent"
+import DogConext from "./context/DogContext"
 function App() {
 
  
@@ -21,12 +22,16 @@ function App() {
   const theme = createTheme();
 
   return (
+    <DogConext.Provider value={{setUrl,setDogs,loading,dogs}}>
+
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
-      <SearchBar loading={loading} setUrl={setUrl} setDogs={setDogs} />
-      {loading ? <CircularProgress /> : <DogList dogs={dogs} />}
+      <SearchBar />
+      {loading ? <CircularProgress /> : <DogList  />}
     </Container>
-    </ThemeProvider>
+      </ThemeProvider>
+      </DogConext.Provider>
+    
   );
 }
 

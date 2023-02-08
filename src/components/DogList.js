@@ -1,6 +1,9 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Dog from "./Dog"
-function DogList({dogs}) {
+import DogContext from "../context/DogContext"
+function DogList() {
+
+  const {dogs} = useContext(DogContext)
   return (
       <>
           {dogs.map((value) => {

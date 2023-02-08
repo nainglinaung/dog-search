@@ -1,7 +1,7 @@
 import React,{useEffect} from 'react'
 import { Grid,Paper  } from '@mui/material'
 import styled from '@emotion/styled';
-import ImageLoad from "./useImageLoad"
+import ImageLoad from "../hooks/useImageLoad"
 import Image from "../index.jpg"
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -26,8 +26,6 @@ function Dog({ info }) {
       <Grid container spacing={2}>
         <Grid item>
           <ImageLoad src={`https://cdn2.thedogapi.com/images/${info.reference_image_id}.jpg`} placeholder={Image} />
-          {/* <img width="100%" height="100%" src={`https://cdn2.thedogapi.com/images/${info.reference_image_id}.jpg`} /> */}
-  
         </Grid>
       </Grid>
       <Grid container rowSpacing={0} >
