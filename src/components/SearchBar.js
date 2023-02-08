@@ -21,8 +21,61 @@ export default function SearchBar() {
     setText(e.target.value); 
   }
 
+
+  const SortByName = (a,b) => {
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+
+    if (nameA < nameB) {
+      return 1;
+    }
+    if (nameA > nameB) {
+      return -1;
+    }
+
+    return 0;
+  }
+
+  const __formatHeight = (a) => {
+    let val = a.height ? a.height.imperial : 0;
+    val = val.split("-");
+    val = (val.length > 0 ) ? parseFloat(val[0]) : 0;
+    val = val || 0;
+    return val; 
+  }
+
+  const __formatLifeSpan = (a) => {
+    let val = a.life_span || 0;
+    val = val.split("-");
+    val = (val.length > 0 ) ? parseFloat(val[0]) : 0;
+    val = val || 0;
+    return val; 
+  }
+
+  const SortByHeight = (a, b) => {
+    return __formatHeight(a) - __formatHeight(b);
+  }
+
+  const SortByLifeSpan = (a, b) => {
+    return __formatLifeSpan(a) - __formatLifeSpan(b);
+  }
+ 
   const handleSelectChange = (e) => {
-    console.log(e.target.value)
+
+    const value = e.target.value; 
+
+    if (value === "name") {
+      setDogs([...dogs.sort(SortByName)])
+    }
+
+    if (value === "height") {
+     setDogs([...dogs.sort(SortByHeight)])
+    }
+
+    if (value === "lifespan") { 
+      setDogs([...dogs.sort(SortByLifeSpan)])
+    }
+    
   }
 
   return (

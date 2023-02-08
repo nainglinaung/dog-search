@@ -6,11 +6,9 @@ function DogList() {
   const {dogs} = useContext(DogContext)
   return (
       <>
-          {dogs.map((value) => {
-             return <Dog info={value} key={value.id} />
-        })}
+        {dogs.map( value =>  <Dog info={value} key={value.id} />)}
       </>
-  )
+  )   
 }
 
 export default DogList
