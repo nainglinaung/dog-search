@@ -15,15 +15,18 @@ function useFetch() {
         redirect: 'follow'
       };
       setLoading(true);
+        
       fetch(url, requestOptions)
         .then(response => response.json())
-        .then((res) => {
+          .then((res) => {
+            console.log("res",res)
             if (res.length > 0) {
                 setData(res);
             }
             setLoading(false);
         })
-        .catch((err) => {
+          .catch((err) => {
+              console.error(err);
             setError(err);
             setLoading(false);
         });
