@@ -25,8 +25,8 @@ function Dog({ info }) {
         </Grid>
       <Grid container spacing={2}>
         <Grid item>
-          {/* <ImageLoad src={`https://cdn2.thedogapi.com/images/${info.reference_image_id}.jpg`} placeholder={Image} /> */}
-          <img width="100%" height="100%" src={`https://cdn2.thedogapi.com/images/${info.reference_image_id}.jpg`} />
+          <ImageLoad src={`https://cdn2.thedogapi.com/images/${info.reference_image_id}.jpg`} placeholder={Image} />
+          {/* <img width="100%" height="100%" src={`https://cdn2.thedogapi.com/images/${info.reference_image_id}.jpg`} /> */}
   
         </Grid>
       </Grid>
