@@ -1,12 +1,12 @@
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import CircularProgress from '@mui/material/CircularProgress';
-import useDebounce from './useDebounce';
+import {TextField,Select,MenuItem} from '@mui/material';
+// import Autocomplete from '@mui/material/Autocomplete';
+
+import useDebounce from '../hooks/useDebounce';
 
 
 
-export default function SearchBar({setUrl,loading}) {
+export default function SearchBar({setUrl,loading,setDogs}) {
   const [open, setOpen] = React.useState(false);
   const [text, setText] = React.useState("");
   const debouncedValue = useDebounce(text,1000);
@@ -21,11 +21,27 @@ export default function SearchBar({setUrl,loading}) {
     setText(e.target.value); 
   }
 
+  const handleSelectChange = (e) => {
+    console.log(e.target.value)
+  }
+
   return (
     <>
       <div>
         <TextField onChange={handleChange} />
-        
+        <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    value="default"
+    label="Sorting"
+    onChange={handleSelectChange}
+  >
+    <MenuItem value="name">Sort By Name</MenuItem>
+    <MenuItem value="height">Sort By Height</MenuItem>
+    <MenuItem value="lifespan">Sort By lifespan</MenuItem>
+    <MenuItem value="default">Sorting</MenuItem>
+          
+  </Select>
       </div>
       {loading}
     </>

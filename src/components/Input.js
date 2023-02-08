@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar"
 
 
 
-export default function Input({setUrl}) {
+export default function Input({setUrl,setDogs}) {
   
   return (<>
    <CssBaseline />
@@ -16,10 +16,9 @@ export default function Input({setUrl}) {
             alignItems: 'center',
           }}
         >
-      
-          <Box component="form" noValidate sx={{ mt: 3 }}>
+        <Box component="form" noValidate sx={{ mt: 3 }}>
               <Grid item xs={12}>
-          <SearchBar setUrl={setUrl} />
+          <SearchBar setUrl={setUrl} setDogs={setDogs} />
               </Grid>   
           </Box>
         </Box>
