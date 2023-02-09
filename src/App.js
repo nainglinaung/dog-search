@@ -10,7 +10,7 @@ import DogConext from "./context/DogContext"
 function App() {
 
  
-  const [data, error, loading, setUrl] = useFetch()
+  const [data, _, loading, setUrl] = useFetch()
   const [dogs, setDogs] = useState(data);
   useEffect(() => {
     setDogs(data);

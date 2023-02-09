@@ -81,7 +81,6 @@ export default function SearchBar() {
   return (
     <>
         <CssBaseline />
-        {/* <Box sx={{marginTop: 8,alignItems: 'center',}}></Box> */}
        <Box component="form" noValidate sx={{ mt: 3 }}>
           <Grid item xs={12}>
        

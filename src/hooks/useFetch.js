@@ -19,15 +19,13 @@ function useFetch() {
       fetch(url, requestOptions)
         .then(response => response.json())
           .then((res) => {
-            console.log("res",res)
-            if (res.length > 0) {
-                setData(res);
-            }
+            setData(res)
             setLoading(false);
         })
           .catch((err) => {
-              console.error(err);
+            console.error(err);
             setError(err);
+            setData([]);
             setLoading(false);
         });
     }, [url]);
