@@ -1,6 +1,5 @@
 import React,{useContext} from 'react';
-import {TextField,Select,MenuItem} from '@mui/material';
-// import Autocomplete from '@mui/material/Autocomplete';
+import {TextField,Select,MenuItem, Grid,Box,CssBaseline} from '@mui/material';
 import DogContext from "../context/DogContext"
 import useDebounce from '../hooks/useDebounce';
 
@@ -77,11 +76,16 @@ export default function SearchBar() {
     }
     
   }
+  
 
   return (
     <>
-      <div>
-        <TextField onChange={handleChange} />
+        <CssBaseline />
+        {/* <Box sx={{marginTop: 8,alignItems: 'center',}}></Box> */}
+       <Box component="form" noValidate sx={{ mt: 3 }}>
+          <Grid item xs={12}>
+       
+          <TextField onChange={handleChange} value={text}   inputProps={{ "data-testid": "dog-search" }} />
         <Select
     labelId="demo-simple-select-label"
     id="demo-simple-select"
@@ -95,8 +99,10 @@ export default function SearchBar() {
     <MenuItem value="default">Sorting</MenuItem>
           
   </Select>
-      </div>
+        </Grid>
+        </Box>
       {loading}
+ 
     </>
   );
 }
