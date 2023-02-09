@@ -1,22 +1,15 @@
-import React,{useEffect,useContext} from 'react'
-import { Grid,Paper  } from '@mui/material'
-import styled from '@emotion/styled';
+import React,{useContext} from 'react'
+import { Grid  } from '@mui/material'
 import ImageLoad from "../hooks/useImageLoad"
 import DogContext from "../context/DogContext"
 import Image from "../index.jpg"
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
+
   
 
 function DogList() {
   
   const {dogs} = useContext(DogContext)
-  // console.log("dogList",dogs)
+
   return (
     <>
       {dogs.map((info) => {
