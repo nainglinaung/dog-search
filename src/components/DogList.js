@@ -13,9 +13,6 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
   
 
-  
-
-
 function DogList() {
   
   const {dogs} = useContext(DogContext)
@@ -23,7 +20,7 @@ function DogList() {
   return (
     <>
       {dogs.map((info) => {
-        return (<div key={info.id}>
+        return (<div key={info.id} data-testid='list-item'>
   <Grid container spacing={2}>
           <Grid item>
             <h2>{info.name}</h2>
